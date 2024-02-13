@@ -21,7 +21,7 @@ func Init() {
 
 func initCors() gin.HandlerFunc {
 	return cors.New(cors.Config{
-		AllowOrigins:     []string{"http://foo.com"},
+		AllowOrigins:     []string{"http://localhost:9000"},
 		AllowMethods:     []string{"PUT", "PATCH"},
 		AllowHeaders:     []string{"Origin"},
 		ExposeHeaders:    []string{"Content-Length"},

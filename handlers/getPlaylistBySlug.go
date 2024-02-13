@@ -27,6 +27,14 @@ func GetPlaylistBySlugHandler(ctx *gin.Context) {
 		return
 	}
 
+	var idsVideos []string
+	for _, s := range playlist.Videos {
+		idsVideos = append(idsVideos, s.IdVideo)
+	}
+
+	playlist.VideosCompleto = getVideosPlaylistIdHandler(ctx, playlist.Videos)
+	playlist.Videos = nil
+
 	ctx.JSON(http.StatusOK, gin.H{
 		"item": playlist,
 	})

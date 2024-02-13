@@ -34,6 +34,9 @@ func GetPlaylistByIdHandler(ctx *gin.Context) {
 		return
 	}
 
+	playlist.VideosCompleto = getVideosPlaylistIdHandler(ctx, playlist.Videos)
+	playlist.Videos = nil
+
 	ctx.JSON(http.StatusOK, gin.H{
 		"item": playlist,
 	})
