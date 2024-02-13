@@ -11,6 +11,7 @@ type Playlist struct {
 	SlugUrl         string             `bson:"slug_url" json:"slugUrl,omitempty"`
 	Videos          []Video            `bson:"videos" json:"videos,omitempty"`
 	VideosCompleto  []VideoFull        `json:"videosCompleto,omitempty"`
+	Categorias      []string           `json:"categorias,omitempty"`
 }
 
 type YoutubeInfo struct {

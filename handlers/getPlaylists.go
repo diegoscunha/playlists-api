@@ -40,6 +40,7 @@ func GetPlaylistsHandler(ctx *gin.Context) {
 		SetProjection(bson.D{
 			{Key: "_id", Value: 1},
 			{Key: "data_criacao", Value: 1},
+			{Key: "categorias", Value: 1},
 			{Key: "slug_url", Value: 1},
 			{Key: "youtube.id", Value: 1},
 			{Key: "youtube.data_criacao", Value: 1},
