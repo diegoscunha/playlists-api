@@ -21,5 +21,7 @@ func initRoutes(router *gin.Engine) {
 		v1.GET("/playlists/:id", handlers.GetPlaylistByIdHandler)
 		v1.GET("/playlists/slug/:slug", handlers.GetPlaylistBySlugHandler)
 		v1.GET("/playlists/:id/videos", handlers.GetVideosByPlaylistIdHandler)
+
+		v1.GET("/categorias", handlers.GetCategoriasHandler)
 	}
 }

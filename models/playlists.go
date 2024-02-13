@@ -61,3 +61,8 @@ type YoutubeVideoInfo struct {
 	IdCanal       string             `bson:"id_canal" json:"idCanal,omitempty"`
 	Imagens       *Imagem            `bson:"imagens" json:"imagens,omitempty"`
 }
+
+type Categoria struct {
+	ID        primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
+	Descricao string             `bson:"descricao,omitempty" json:"descricao,omitempty"`
+}

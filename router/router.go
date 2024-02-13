@@ -13,6 +13,7 @@ func Init() {
 	// Inicialização do router
 	router := gin.Default()
 	router.Use(initCors())
+	router.NoRoute(notFound)
 	// Inicialização das rotas
 	initRoutes(router)
 	// Rodando api
@@ -31,4 +32,8 @@ func initCors() gin.HandlerFunc {
 		},
 		MaxAge: 12 * time.Hour,
 	})
+}
+
+func notFound(ctx *gin.Context) {
+	ctx.JSON(404, gin.H{"message": "Page not found"})
 }
