@@ -63,7 +63,7 @@ func GetPlaylistsHandler(ctx *gin.Context) {
 	defer cur.Close(context.Background())
 
 	// tratamento paginas
-	var numPages = math.Round(float64(totalResults) / float64(limit))
+	var numPages = math.Ceil(float64(totalResults) / float64(limit))
 	var nextPage int64 = 0
 	if int64(numPages) > page {
 		nextPage = page + 1
